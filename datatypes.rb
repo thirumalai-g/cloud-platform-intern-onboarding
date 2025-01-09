@@ -33,7 +33,7 @@ end
 arr1=["hello","world"]
 
 # used join printing in one line
-#
+
 puts arr1.join(' ')
 
 arr=["fred",10,3.24,["hello","world"]]
