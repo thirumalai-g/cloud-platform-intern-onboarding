@@ -1,23 +1,20 @@
 # frozen_string_literal: true
 
 BEGIN{
-  a=5
-  puts "Begin done value"
+  a=(2...8).to_a
+  puts "Begin done value #{a.include?3}"
 }
 
 END{
   puts "After begin done value is #{a}"
 }
-
-
-
-
 # global variable
-$va="iru"
-def f
-  puts "th"+$va;
+$joinname="thiru"
+def globe
+  # ternary operator
+  puts 5>10?"krishna":$joinname;
 end
-f()
+globe()
 
 class Customer
   # class variable

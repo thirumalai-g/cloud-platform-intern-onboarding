@@ -40,9 +40,10 @@ arr=["fred",10,3.24,["hello","world"]]
 
 arr.each do |i|
   puts "#{i}"
-
 end
 
+# negative indexing
+puts arr[-2]
 
 #  Symbols
 
