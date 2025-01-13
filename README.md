@@ -1,2 +1,2 @@
-# krishna-onboarding
-Learning for Intern Onboarding - Krishna
+# intern-onboarding
+Learning for Intern Onboarding
