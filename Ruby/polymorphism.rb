@@ -7,32 +7,32 @@
 
 # duck typing is how
 
-# class Vehicles
-#   def tyretype
-#     puts "Heavy car"
-#   end
-# end
+class Vehicles
+  def tyretype
+    puts "Heavy car"
+  end
+end
+
+class Cars < Vehicles
+
+  def tyretype(wheel)
+    puts "Small car with #{wheel} wheels"
+  end
+end
+
+class Cycle < Vehicles
+  def tyretype(wheel)
+    puts " Cycle with #{wheel} wheels"
+  end
+end
+
 #
-# class Cars < Vehicles
-#
-#   def tyretype(wheel)
-#     puts "Small car with #{wheel} wheels"
-#   end
-# end
-#
-# class Cycle < Vehicles
-#   def tyretype(wheel)
-#     puts " Cycle with #{wheel} wheels"
-#   end
-# end
-#
-#
-# obj1 = Cars.new
-#
-# obj1.tyretype(4)
+obj1 = Cars.new
+
+obj1.tyretype(4)
 
 
-# obj2 = Cars.new
+obj2 = Cars.new
 
 
 
@@ -40,27 +40,27 @@
 
 
 #
-# class Bike
-#   def move
-#     puts "car makes a ride in roads"
-#   end
-# end
-#
-# class Plane
-#   def move
-#     puts "Plane fly in sky"
-#   end
-# end
-#
-# def ride_vehicle(vehicle)
-#   vehicle.move
-# end
-#
-#
-# v1=Bike.new
-# v2=Plane.new
-#
-# ride_vehicle(v1)
+class Bike
+  def move
+    puts "car makes a ride in roads"
+  end
+end
+
+class Plane
+  def move
+    puts "Plane fly in sky"
+  end
+end
+
+def ride_vehicle(vehicle)
+  vehicle.move
+end
+
+
+v1=Bike.new
+v2=Plane.new
+
+ride_vehicle(v1)
 
 
 # Acess Modifier

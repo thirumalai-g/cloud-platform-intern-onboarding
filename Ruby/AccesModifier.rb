@@ -2,22 +2,22 @@
 
 # Public Acess modifier
 
-# class Geeks
-#   def publicmethod
-#     puts "it is default public method"
-#   end
-#   public
-#
-#   def publicmethod2
-#     puts "it is public method using public keyword"
-#   end
-# end
-#
-#
-# obj1 = Geeks.new()
-#
-# obj1.publicmethod
-# obj1.publicmethod2
+class Geeks
+  def publicmethod
+    puts "it is default public method"
+  end
+  public
+
+  def publicmethod2
+    puts "it is public method using public keyword"
+  end
+end
+
+
+obj1 = Geeks.new()
+
+obj1.publicmethod
+obj1.publicmethod2
 
 
 #protected Access modifier

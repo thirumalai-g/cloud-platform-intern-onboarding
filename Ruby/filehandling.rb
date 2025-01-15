@@ -14,17 +14,17 @@ fileobject.close();
 fileobjet= File.open("sample.txt","r+")
 
 # read mentiones character then it will print upto the entered values
+#
+print(fileobjet.sysread(3))
 
-# print(fileobjet.sysread(3))
-
-# puts(fileobjet.sysread(4))
+puts(fileobjet.sysread(4))
 # read entire content from a file
-
-# puts(fileobjet.read())
-
+#
+puts(fileobjet.read())
+#
 # readlines function return as a function
-
-# puts(fileobjet.readlines())
+#
+puts(fileobjet.readlines())
 
 
 file2.write("i learnt file handling in ruby language")

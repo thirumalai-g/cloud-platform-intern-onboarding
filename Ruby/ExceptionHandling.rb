@@ -25,11 +25,11 @@ end
 
 def check_age(age)
   raise "Age must be a positive number" if age<=0
-  puts"Valid age:#{age}"
+  "Valid age:#{age}"
 end
 
 begin
-  check_age(-1)
+  check_age(1)
 rescue => e
   puts "caught exception: #{e.message}"
 ensure
