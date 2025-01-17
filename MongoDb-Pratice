@@ -1,0 +1,1125 @@
+Last login: Fri Jan 17 08:58:52 on console
+pmi-thiruvenkadakrishnan-s@PMI-Thiruvenkadakrishnan-Ss-MacBook-Pro ~ % mongosh
+Current Mongosh Log ID:	6789d00d9e71a22bc47809b7
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+Using MongoDB:		8.0.4
+Using Mongosh:		2.3.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-01-17T08:59:20.251+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin   40.00 KiB
+appdb   96.00 KiB
+config  48.00 KiB
+local   72.00 KiB
+test> use appdb
+switched to db appdb
+appdb> show collections
+student
+users
+appdb> db.users.find()
+[
+  {
+    _id: ObjectId('678742df484386806e578488'),
+    name: 'Krishna',
+    age: 30,
+    address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 },
+    hobbies: [ 'coding', 'cricket', 'good' ]
+  },
+  { _id: ObjectId('6787449f484386806e578489'), name: 'Rathessh' },
+  { _id: ObjectId('6787449f484386806e57848a'), name: 'Rithish' },
+  { _id: ObjectId('6787449f484386806e57848b'), name: 'saikrishna' },
+  {
+    _id: ObjectId('678753ec484386806e57848c'),
+    name: 'Kayle',
+    age: '22',
+    address: { street: 'south street', pincode: 600441 },
+    hoobies: [ 'webdev', 'games' ]
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848d'),
+    name: 'Dave',
+    age: 25,
+    hobbies: [ 'appdevelopment', 'cybersecurity' ],
+    address: { street: '780 West Street', pincode: 609405, city: 'Thiruvarur' }
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848e'),
+    name: 'Manikandan',
+    age: 50,
+    hobbies: [ 'watchingnews', 'riding' ],
+    address: { street: 'Sannthi street', city: 'Nanilam' }
+  },
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('67876f2f484386806e578490'),
+    name: 'Suresh',
+    age: 35,
+    hobbies: [ 'Gaming' ],
+    address: { street: 'Suresh st', city: 'Coimbatore' },
+    balance: 20,
+    debt: 0
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  }
+]
+appdb> db.users.find({age: {$lt:30}})
+[
+  {
+    _id: ObjectId('678756f2484386806e57848d'),
+    name: 'Dave',
+    age: 25,
+    hobbies: [ 'appdevelopment', 'cybersecurity' ],
+    address: { street: '780 West Street', pincode: 609405, city: 'Thiruvarur' }
+  },
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  }
+]
+appdb> db.users.find({name: {$in:["kalpak","Ramesh"]}})
+[
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  }
+]
+appdb> db.users.find({name: {$in:["kalpak","Ramesh"]}}).pretty()
+[
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  }
+]
+appdb> db.users.find({$and:[{age:{$lt:30}},{debt:{$gt:100}}]})
+[
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  }
+]
+appdb> db.users.find({$or:{[{age:{$lte:35}},{debt {$lt:2000}}]}})
+Uncaught:
+SyntaxError: Unexpected token, expected "]" (1:36)
+
+> 1 | db.users.find({$or:{[{age:{$lte:35}},{debt {$lt:2000}}]}})
+    |                                     ^
+  2 |
+
+appdb> db.users.find({$or:[{age:{$lte:35}},{debt {$lt:2000}}]})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:42)
+
+> 1 | db.users.find({$or:[{age:{$lte:35}},{debt {$lt:2000}}]})
+    |                                           ^
+  2 |
+
+appdb> db.users.find({$or:[{age:{$lte:35}},{debt:{$lt:2000}}]})
+[
+  {
+    _id: ObjectId('678742df484386806e578488'),
+    name: 'Krishna',
+    age: 30,
+    address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 },
+    hobbies: [ 'coding', 'cricket', 'good' ]
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848d'),
+    name: 'Dave',
+    age: 25,
+    hobbies: [ 'appdevelopment', 'cybersecurity' ],
+    address: { street: '780 West Street', pincode: 609405, city: 'Thiruvarur' }
+  },
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('67876f2f484386806e578490'),
+    name: 'Suresh',
+    age: 35,
+    hobbies: [ 'Gaming' ],
+    address: { street: 'Suresh st', city: 'Coimbatore' },
+    balance: 20,
+    debt: 0
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  }
+]
+appdb> db.users.find({age: {$not:{$lt:30}}})
+[
+  {
+    _id: ObjectId('678742df484386806e578488'),
+    name: 'Krishna',
+    age: 30,
+    address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 },
+    hobbies: [ 'coding', 'cricket', 'good' ]
+  },
+  { _id: ObjectId('6787449f484386806e578489'), name: 'Rathessh' },
+  { _id: ObjectId('6787449f484386806e57848a'), name: 'Rithish' },
+  { _id: ObjectId('6787449f484386806e57848b'), name: 'saikrishna' },
+  {
+    _id: ObjectId('678753ec484386806e57848c'),
+    name: 'Kayle',
+    age: '22',
+    address: { street: 'south street', pincode: 600441 },
+    hoobies: [ 'webdev', 'games' ]
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848e'),
+    name: 'Manikandan',
+    age: 50,
+    hobbies: [ 'watchingnews', 'riding' ],
+    address: { street: 'Sannthi street', city: 'Nanilam' }
+  },
+  {
+    _id: ObjectId('67876f2f484386806e578490'),
+    name: 'Suresh',
+    age: 35,
+    hobbies: [ 'Gaming' ],
+    address: { street: 'Suresh st', city: 'Coimbatore' },
+    balance: 20,
+    debt: 0
+  }
+]
+appdb> db.users.aggregate([{$project:{balance:{$sub:[balance:debt]}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:53)
+
+> 1 | db.users.aggregate([{$project:{balance:{$sub:[balance:debt]}}}])
+    |                                                      ^
+  2 |
+
+appdb> db.users.aggregate([{$project:{balance:{$sub:[balance,debt]}}}])
+ReferenceError: balance is not defined
+appdb> db.users.aggregate([{$project:{balance:{$add:[balance,40]}}}])
+ReferenceError: balance is not defined
+appdb> show collectios
+MongoshInvalidInputError: [COMMON-10001] 'collectios' is not a valid argument for "show".
+appdb> show collections
+student
+users
+appdb> db.users.student
+appdb.users.student
+appdb> db.student.find()
+
+appdb> db.student.insert({age:"krishna",fees:54000,tax:4000},{name:"thiru",fees:48000,tax:2500})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('6789db209e71a22bc47809b8') }
+}
+appdb> db.student.insertMany({age:"krishna",fees:54000,tax:4000},{name:"thiru",fees:48000,tax:2500})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+appdb> db.student.insertMany([{age:"krishna",fees:54000,tax:4000},{name:"thiru",fees:48000,tax:2500}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6789db3b9e71a22bc47809b9'),
+    '1': ObjectId('6789db3b9e71a22bc47809ba')
+  }
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db209e71a22bc47809b8'),
+    age: 'krishna',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'krishna',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.delete({})
+TypeError: db.student.delete is not a function
+appdb> db.student.deleteOne({})
+{ acknowledged: true, deletedCount: 1 }
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'krishna',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.aggreate([{$project:{totalprice:{$add:["$fees","$tax"]}}}])
+TypeError: db.student.aggreate is not a function
+appdb> db.student.aggregate([{$project:{totalprice:{$add:["$fees","$tax"]}}}])
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), totalprice: 58000 },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), totalprice: 50500 }
+]
+appdb> db.users.find()
+[
+  {
+    _id: ObjectId('678742df484386806e578488'),
+    name: 'Krishna',
+    age: 30,
+    address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 },
+    hobbies: [ 'coding', 'cricket', 'good' ]
+  },
+  { _id: ObjectId('6787449f484386806e578489'), name: 'Rathessh' },
+  { _id: ObjectId('6787449f484386806e57848a'), name: 'Rithish' },
+  { _id: ObjectId('6787449f484386806e57848b'), name: 'saikrishna' },
+  {
+    _id: ObjectId('678753ec484386806e57848c'),
+    name: 'Kayle',
+    age: '22',
+    address: { street: 'south street', pincode: 600441 },
+    hoobies: [ 'webdev', 'games' ]
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848d'),
+    name: 'Dave',
+    age: 25,
+    hobbies: [ 'appdevelopment', 'cybersecurity' ],
+    address: { street: '780 West Street', pincode: 609405, city: 'Thiruvarur' }
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848e'),
+    name: 'Manikandan',
+    age: 50,
+    hobbies: [ 'watchingnews', 'riding' ],
+    address: { street: 'Sannthi street', city: 'Nanilam' }
+  },
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('67876f2f484386806e578490'),
+    name: 'Suresh',
+    age: 35,
+    hobbies: [ 'Gaming' ],
+    address: { street: 'Suresh st', city: 'Coimbatore' },
+    balance: 20,
+    debt: 0
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  }
+]
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'krishna',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.aggregate([{$project:{fees:{$add:["$fees","$tax"]}}}])
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), fees: 58000 },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), fees: 50500 }
+]
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'krishna',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'krishna',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateOne({age:"krishna"},{$set:{age:"name"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'name',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateOne({age:"krishna"},{$set:{age:"$name"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'name',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateOne({age:"krishna"},[{$set:{age:"$name"}},{$unset:"name"}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    age: 'name',
+    fees: 54000,
+    tax: 4000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9'},[{$set:{age:"$name"}},{$unset:"name"}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:62)
+
+> 1 | db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9'},[{$set:{age:"$name"}},{$unset:"name"}])
+    |                                                               ^
+  2 |
+
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9'},{[{$set:{age:"$name"}},{$unset:"name"}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:62)
+
+> 1 | db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9'},{[{$set:{age:"$name"}},{$unset:"name"}])
+    |                                                               ^
+  2 |
+
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9'}},{[{$set:{age:"$name"}},{$unset:"name"}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:62)
+
+> 1 | db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9'}},{[{$set:{age:"$name"}},{$unset:"name"}])
+    |                                                               ^
+  2 |
+
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9')},{[{$set:{age:"$name"}},{$unset:"name"}])
+Uncaught:
+SyntaxError: Unexpected token, expected "]" (1:87)
+
+> 1 | db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9')},{[{$set:{age:"$name"}},{$unset:"name"}])
+    |                                                                                        ^
+  2 |
+
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9')},[{$set:{age:"$name"}},{$unset:"name"}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), fees: 54000, tax: 4000 },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809b9')},[{$set:{age:"$name"}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), fees: 54000, tax: 4000 },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateMany({_id: ObjectId('6789db3b9e71a22bc47809b9')},{$set:[{fname:"krishna"},{lname:"mani"}]}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:107)
+
+> 1 | db.student.updateMany({_id: ObjectId('6789db3b9e71a22bc47809b9')},{$set:[{fname:"krishna"},{lname:"mani"}]}})
+    |                                                                                                            ^
+  2 |
+
+appdb> db.student.updateMany({_id: ObjectId('6789db3b9e71a22bc47809b9')},{$set:{fname:"krishna"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.users.updateOne({fname:"krishna"},{$set:{lname:"mani"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateMany({_id: ObjectId('6789db3b9e71a22bc47809b9')},{$set:{lname:"mani"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500
+  }
+]
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809ba')},{$set:{lname:"baskaran"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'thiru',
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran'
+  }
+]
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809ba')},[{$set:{name:"fname"}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    name: 'fname',
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran'
+  }
+]
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809ba')},[{$set:{name:"$fname"}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran'
+  }
+]
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809ba')},{$set:{fname:"thiru"}}]
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:87)
+
+> 1 | db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809ba')},{$set:{fname:"thiru"}}]
+    |                                                                                        ^
+  2 |
+
+appdb> db.student.updateOne({_id: ObjectId('6789db3b9e71a22bc47809ba')},{$set:{fname:"thiru"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran',
+    fname: 'thiru'
+  }
+]
+appdb> db.student.aggregate([{$project:{fullname:{$concat:["fname","lname"]}}}])
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), fullname: 'fnamelname' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), fullname: 'fnamelname' }
+]
+appdb> db.student.aggregate([{$project:{fullname:{$concat:["$fname","$lname"]}}}])
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fullname: 'krishnamani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fullname: 'thirubaskaran'
+  }
+]
+appdb> db.student.aggregate([{$project:{fullname:{$concat:["$fname","$lname"]}}}])
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fullname: 'krishnamani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fullname: 'thirubaskaran'
+  }
+]
+appdb> db.student.aggregate([{$project:{compres:{$strcasecmp:["$fname","$lname"]}}}])
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), compres: -1 },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), compres: 1 }
+]
+appdb> db.users.aggregate([{$project:{lower:{$tolower:"$fnmae"}}}])
+MongoServerError[Location31325]: Invalid $project :: caused by :: Unknown expression $tolower
+appdb> db.users.aggregate([{$project:{lower:{$toLower:"$fnmae"}}}])
+[
+  { _id: ObjectId('678742df484386806e578488'), lower: '' },
+  { _id: ObjectId('6787449f484386806e578489'), lower: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), lower: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), lower: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), lower: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), lower: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), lower: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), lower: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), lower: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), lower: '' }
+]
+appdb> db.users.aggregate([{$project:{lower:{$toLower:"$fname"}}}])
+[
+  { _id: ObjectId('678742df484386806e578488'), lower: '' },
+  { _id: ObjectId('6787449f484386806e578489'), lower: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), lower: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), lower: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), lower: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), lower: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), lower: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), lower: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), lower: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), lower: '' }
+]
+appdb> db.users.aggregate([{$project:{lower:{$toUpper:"$fname"}}}])
+[
+  { _id: ObjectId('678742df484386806e578488'), lower: '' },
+  { _id: ObjectId('6787449f484386806e578489'), lower: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), lower: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), lower: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), lower: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), lower: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), lower: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), lower: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), lower: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), lower: '' }
+]
+appdb> db.users.aggregate([{$project:{uppercase:{$toUpper:"$lname"}}}])
+[
+  { _id: ObjectId('678742df484386806e578488'), uppercase: '' },
+  { _id: ObjectId('6787449f484386806e578489'), uppercase: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), uppercase: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), uppercase: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), uppercase: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), uppercase: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), uppercase: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), uppercase: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), uppercase: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), uppercase: '' }
+]
+appdb> db.student.find
+[Function: find] AsyncFunction {
+  returnsPromise: true,
+  apiVersions: [ 1, Infinity ],
+  returnType: 'Cursor',
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 'ReplSet', 'Sharded', 'LoadBalanced', 'Standalone' ],
+  deprecated: false,
+  platforms: [ 'Compass', 'Browser', 'CLI' ],
+  isDirectShellCommand: false,
+  acceptsRawInput: false,
+  shellCommandCompleter: undefined,
+  help: [Function (anonymous)] Help
+}
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran',
+    fname: 'thiru'
+  }
+]
+appdb> db.users.aggregate([{$project:{lname:{$toUpper:"$lname"}}}])
+[
+  { _id: ObjectId('678742df484386806e578488'), lname: '' },
+  { _id: ObjectId('6787449f484386806e578489'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), lname: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), lname: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), lname: '' }
+]
+appdb> db.users.aggregate([
+...   {
+...     $project: {
+...       _id: 1,              // Include the _id field
+...       fname: 1,            // Include the fname field
+...       lname: { $toUpper: "$lname" },  // Convert lname to uppercase
+...       fees: 1,             // Include the fees field
+...       tax: 1               // Include the tax field
+...     }
+...   }
+... ])
+[
+  { _id: ObjectId('678742df484386806e578488'), lname: '' },
+  { _id: ObjectId('6787449f484386806e578489'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), lname: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), lname: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), lname: '' }
+]
+appdb> db.users.aggregate([
+...   {
+...     $project: {
+...       _id: 1,  // Include _id field
+...       fname: 1,  // Include fname field
+...       lname: { 
+...         $toUpper: { 
+...           $ifNull: [{ $toString: "$lname" }, ""]  // Convert lname to string and then to uppercase, default to empty string if null
+...         }
+...       }, 
+...       fees: 1,  // Include fees field
+...       tax: 1    // Include tax field
+...     }
+...   }
+... ])
+[
+  { _id: ObjectId('678742df484386806e578488'), lname: '' },
+  { _id: ObjectId('6787449f484386806e578489'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), lname: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), lname: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), lname: '' }
+]
+appdb> db.users.aggregate({$project:{lname:{$toUpper:["$lname"]}}})
+[
+  { _id: ObjectId('678742df484386806e578488'), lname: '' },
+  { _id: ObjectId('6787449f484386806e578489'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848a'), lname: '' },
+  { _id: ObjectId('6787449f484386806e57848b'), lname: '' },
+  { _id: ObjectId('678753ec484386806e57848c'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848d'), lname: '' },
+  { _id: ObjectId('678756f2484386806e57848e'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e57848f'), lname: '' },
+  { _id: ObjectId('67876f2f484386806e578490'), lname: '' },
+  { _id: ObjectId('6788d0a628b0dd5e8ee9082a'), lname: '' }
+]
+appdb> 
+
+appdb> db.student.aggregate({$project:{lname:{$toUpper:["$lname"]}}})
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), lname: 'MANI' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), lname: 'BASKARAN' }
+]
+appdb> db.student.aggregate({$project:{lname:{$toUpper:["$lname","$fname"]}}})
+MongoServerError[Location16020]: Invalid $project :: caused by :: Expression $toUpper takes exactly 1 arguments. 2 were passed in.
+appdb> db.student.aggregate({$project:{lname:{$toUpper:"$lname"}}})
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), lname: 'MANI' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), lname: 'BASKARAN' }
+]
+appdb> db.student.aggregate({$project:{lname:{$toUpper:"$fname"}}})
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), lname: 'KRISHNA' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), lname: 'THIRU' }
+]
+appdb> db.student.aggregate({$project:{lname:{$toUpper:"$fname"}}})
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), lname: 'KRISHNA' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), lname: 'THIRU' }
+]
+appdb> db.student.aggregate({$project:{lname:{$toUpper:fname}}})
+ReferenceError: fname is not defined
+appdb> db.student.aggregate({$project:{lname:{$toUpper:"$lname"}}})
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), lname: 'MANI' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), lname: 'BASKARAN' }
+]
+appdb> db.student.aggregate({$project:{substr:{$substr:["$lname",0,4]}}})
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), substr: 'mani' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), substr: 'bask' }
+]
+appdb> db.student.aggregate([{
+... $project: {_id: 0,fname: 1}}])
+[ { fname: 'krishna' }, { fname: 'thiru' } ]
+appdb> db.student.aggregate([{ $project: { _id: 0, fname: 1 } }]
+... db.student.aggregate([{ $project: { _id: 0, fname: 1 } }])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (2:0)
+
+  1 | db.student.aggregate([{ $project: { _id: 0, fname: 1 } }]
+> 2 | db.student.aggregate([{ $project: { _id: 0, fname: 1 } }])
+    | ^
+  3 |
+
+appdb> db.student.aggregate([{ $project: { _id: 0, fname: 1 } }])
+[ { fname: 'krishna' }, { fname: 'thiru' } ]
+appdb> db.student.aggregate([{ $project: { _id: 0, fname: 1 } }]).pretty()
+[ { fname: 'krishna' }, { fname: 'thiru' } ]
+appdb> db.student.aggregate([{$match:{fname:"krishna"}},{ $project: { _id: 0, fname: 1 } }]).pretty()
+[ { fname: 'krishna' } ]
+appdb> db.student.find()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran',
+    fname: 'thiru'
+  }
+]
+appdb> db.student.aggregate({$group:{_totalfees:{$sum:"$fees"}}})
+MongoServerError[Location15955]: a group specification must include an _id
+appdb> db.student.aggregate({$group:{_id:ObjectId('6789db3b9e71a22bc47809b9'),_totalfees:{$sum:"$fees"}}})
+[ { _id: ObjectId('6789db3b9e71a22bc47809b9'), _totalfees: 102000 } ]
+appdb> db.student.aggregate{$addFields:([{totalfees:{$sum:["$fees","$tax"]}}}])
+Uncaught:
+SyntaxError: Missing semicolon. (1:20)
+
+> 1 | db.student.aggregate{$addFields:([{totalfees:{$sum:["$fees","$tax"]}}}])
+    |                     ^
+  2 |
+
+appdb> db.student.aggregate([{$addFields:([{totalfees:{$sum:["$fees","$tax"]}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:71)
+
+> 1 | db.student.aggregate([{$addFields:([{totalfees:{$sum:["$fees","$tax"]}}}])
+    |                                                                        ^
+  2 |
+
+appdb> db.student.aggregate([{$addFields:{totalfees:{$sum:["$fees","$tax"]}}}])
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani',
+    totalfees: 58000
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran',
+    fname: 'thiru',
+    totalfees: 50500
+  }
+]
+appdb> commit appdb
+Uncaught:
+SyntaxError: Missing semicolon. (1:6)
+
+> 1 | commit appdb
+    |       ^
+  2 |
+
+appdb> commit app.db
+Uncaught:
+SyntaxError: Missing semicolon. (1:6)
+
+> 1 | commit app.db
+    |       ^
+  2 |
+
+appdb> exit
+pmi-thiruvenkadakrishnan-s@PMI-Thiruvenkadakrishnan-Ss-MacBook-Pro ~ % git --version
+git version 2.39.5 (Apple Git-154)
+pmi-thiruvenkadakrishnan-s@PMI-Thiruvenkadakrishnan-Ss-MacBook-Pro ~ % mongosh
+Current Mongosh Log ID:	678a1c8f07a5482b59ac75ce
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+Using MongoDB:		8.0.4
+Using Mongosh:		2.3.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-01-17T08:59:20.251+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin    40.00 KiB
+appdb   144.00 KiB
+config   72.00 KiB
+local    72.00 KiB
+test> show collections
+
+test> use appdb
+switched to db appdb
+appdb> show collections
+student
+users
+appdb> exit
+pmi-thiruvenkadakrishnan-s@PMI-Thiruvenkadakrishnan-Ss-MacBook-Pro ~ % mongosh
