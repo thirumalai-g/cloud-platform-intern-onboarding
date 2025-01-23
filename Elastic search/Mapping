@@ -1,0 +1,22 @@
+defining the structure or schema of your documents what are field going to use and it type like text,keyword,int,double,date
+
+ curl -X PUT "localhost:9200/article" -H'Content-Type: application/json'-d '{
+"mappings": {
+"properties":{
+"title":{"type":"text"},
+"content":{"type":"text"},
+"author":{"type":"text"}
+}}}'
+
+
+
+
+
+{"acknowledged":true,"shards_acknowledged":true,"index":"article"}curl: (3) nested brace in URL position 15:
+{
+"mappings": {
+"properties":{
+"title":{"type":"text"},
+"content":{"type":"text"},
+"author":{"type":"text"}
+}}}
