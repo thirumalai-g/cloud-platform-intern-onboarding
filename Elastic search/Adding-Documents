@@ -1,0 +1,27 @@
+created a document name _doc with id as 1
+
+
+query=>(mention a id)
+curl -X POST "localhost:9200/article/_doc/1" -H 'Content-Type: application/json' -d '{
+"title": "How to Learn Elasticsearch",
+"content": "Elasticsearch is a powerful search engine for full text searc, logging, and analytics",
+"author": "John Doe"
+}'
+
+result=>
+
+
+{"_index":"article","_type":"_doc","_id":"1","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+
+
+query=>(does not mention id it auto allocate id)
+
+ curl -X POST "localhost:9200/article/_doc" -H 'Content-Type:application/json' -d '{
+> "title": "Elasticsearch Basics",
+> "content": "Understanding the fundamentals of Elasticsearch can significantly improve your data search experience.",
+> "author": "Krishna"
+> }'
+
+result=>
+
+{"_index":"article","_type":"_doc","_id":"NFWZkpQBtBPqpZ0CRKre","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
