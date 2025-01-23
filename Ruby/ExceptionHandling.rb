@@ -10,8 +10,11 @@ end
 
 
 begin
-  result =10/2
 
+  raise ZeroDivisionError
+  result =10/0
+rescue IndexError => e
+  puts "Error: #{e.class}: #{e.message}"
 rescue ZeroDivisionError => e
   puts "Error: #{e.class}: #{e.message}"
 else

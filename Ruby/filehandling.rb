@@ -22,7 +22,7 @@ puts(fileobjet.sysread(4))
 #
 puts(fileobjet.read())
 #
-# readlines function return as a function
+# readlines function return as a array
 #
 puts(fileobjet.readlines())
 
