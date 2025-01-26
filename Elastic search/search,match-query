@@ -1,0 +1,44 @@
+querying the index to show all document(fields and data)
+
+query=>
+$ curl -X GET "localhost:9200/article/_search"
+
+result=>
+
+{"took":2,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":3,"max_score":1.0,"hits":[{"_index":"article","_type":"_doc","_id":"NFWZkpQBtBPqpZ0CRKre","_score":1.0,"_source":{
+"title": "Elasticsearch Basics",
+"content": "Understanding the fundamentals of Elasticsearch can significantly improve your data search experience.",
+"author": "Krishna"
+}},{"_index":"article","_type":"_doc","_id":"1","_score":1.0,"_source":{
+"title": "How to Learn Elasticsearch",
+"content": "Elasticsearch is a powerful search engine for full text searc, logging, and analytics",
+"author": "John Doe"
+}},{"_index":"article","_type":"_doc","_id":"3","_score":1.0,"_source":
+{
+  "title": "Advanced Elasticsearch Techniques",
+  "content": "Dive deeper into Elasticsearch with advanced topics like aggregations, filters, and performance tuning.",
+  "author": "John Doe"
+}
+
+
+match search query in title field -> check if the word contains
+
+query =>
+
+curl -X GET "localhost:9200/my_index/_search" -H 'Content-Type:application/json' -d '{
+"query":{
+"match":{
+"title":"Elasticsearch"}
+}}'
+
+
+result =>
+
+
+{"took":2,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":1,"max_score":0.2876821,"hits":[{"_index":"my_index","_type":"_doc","_id":"1","_score":0.2876821,"_source":
+{
+  "title": "Elasticsearch for Beginners",
+  "author": "John Doe",
+  "publication_date": "2023-01-01",
+  "price": 29.99
+}
