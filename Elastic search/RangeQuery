@@ -1,4 +1,4 @@
-range query => used price filed to check wheather amount under lte=30 and gte=25
+range query => used price field to check wheather amount under lte=30 and gte=25
 
 query=>
 
