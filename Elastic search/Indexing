@@ -3,7 +3,7 @@ curl ->client url used to connect with server
 -X -> used http protocol
 PUT -> HTTP methods to crete a index or replace
 localhost:9200 ->where the local elastic search instance running
-article -> is the index created
+article -> is the index created and it contains many documents
 
 query=>
 curl -X PUT "localhost:9200/article"
