@@ -1,0 +1,48 @@
+Boolquery - using bool query perform multiple conditionquery such must,must_not,filter,should
+
+index=>
+
+{"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":2,"max_score":1.0,"hits":[
+{"_index":"my_index","_type":"_doc","_id":"2","_score":1.0,"_source":{
+"title":"Journey of elastic search Advaced",
+"author":"prekrishna",
+"publiation_date":"2024-12-22",
+"price":25.89
+}},
+
+
+{"_index":"my_index","_type":"_doc","_id":"1","_score":1.0,"_source":
+{
+  "title": "Elasticsearch for Beginners",
+  "author": "John Doe",
+  "publication_date": "2023-01-01",
+  "price": 29.99
+}
+}]}}
+
+
+
+query =>
+
+curl GET "localhost:9200/my_index/_search" -H 'Content-Type:application/json' -d '{  -d'
+"query":{
+"bool":{
+"must":[
+{
+"match":{
+"author":"John Doe"}},{
+"range":{
+"price":{
+"gte":25}}
+}]}}}'
+
+
+ result =>
+
+ {"took":3,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":{"total":1,"max_score":1.5753641,"hits":[{"_index":"my_index","_type":"_doc","_id":"1","_score":1.5753641,"_source":
+ {
+   "title": "Elasticsearch for Beginners",
+   "author": "John Doe",
+   "publication_date": "2023-01-01",
+   "price": 29.99
+ }
