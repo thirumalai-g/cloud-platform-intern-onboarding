@@ -5,8 +5,8 @@ PUT -> HTTP methods to crete a index or replace
 localhost:9200 ->where the local elastic search instance running
 article -> is the index created
 
-input:
+query=>
 curl -X PUT "localhost:9200/article"
 
-output
+result=>
 {"acknowledged":true,"shards_acknowledged":true,"index":"article"}

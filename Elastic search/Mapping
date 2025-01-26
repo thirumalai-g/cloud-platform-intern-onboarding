@@ -1,5 +1,7 @@
 defining the structure or schema of your documents what are field going to use and it type like text,keyword,int,double,date
 
+
+query=>
  curl -X PUT "localhost:9200/article" -H'Content-Type: application/json'-d '{
 "mappings": {
 "properties":{
@@ -9,7 +11,7 @@ defining the structure or schema of your documents what are field going to use a
 }}}'
 
 
-
+Result=>
 
 
 {"acknowledged":true,"shards_acknowledged":true,"index":"article"}curl: (3) nested brace in URL position 15:
