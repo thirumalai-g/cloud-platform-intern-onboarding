@@ -1,0 +1,73 @@
+
+$cmp => compare the two fields and return a result of [-1,0,1]
+
+$project => to shape the output documents by exclude or include field
+
+
+query=>
+
+appdb> db.users.aggregate([
+... {
+... $project:{
+... comparisonresult:{$cmp:["$debt","$balance"]}
+... }
+... }
+... ]);
+
+
+result=>
+
+{ _id: ObjectId('678742df484386806e578488'), comparisonresult: 0 },
+  { _id: ObjectId('6787449f484386806e578489'), comparisonresult: 0 },
+  { _id: ObjectId('6787449f484386806e57848a'), comparisonresult: 0 },
+  { _id: ObjectId('6787449f484386806e57848b'), comparisonresult: 0 },
+  { _id: ObjectId('678753ec484386806e57848c'), comparisonresult: 0 },
+  { _id: ObjectId('678756f2484386806e57848d'), comparisonresult: 0 },
+  { _id: ObjectId('678756f2484386806e57848e'), comparisonresult: 0 },
+  { _id: ObjectId('67876f2f484386806e57848f'), comparisonresult: 1 },
+  { _id: ObjectId('67876f2f484386806e578490'), comparisonresult: -1 },
+  { _id: ObjectId('6797194e603f864bb7c157f4'), comparisonresult: -1 },
+  { _id: ObjectId('67972268603f864bb7c157f5'), comparisonresult: -1 },
+  { _id: ObjectId('67972268603f864bb7c157f6'), comparisonresult: -1 }
+
+
+
+query =>
+
+db.users.find({debt:{$lte:1000}})
+
+
+result=>
+
+
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('67876f2f484386806e578490'),
+    name: 'Suresh',
+    age: 35,
+    hobbies: [ 'Gaming' ],
+    address: { street: 'Suresh st', city: 'Coimbatore' },
+    balance: 20,
+    debt: 0,
+    loan: true
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 46,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100,
+    loan: true
+  }
+]
+
