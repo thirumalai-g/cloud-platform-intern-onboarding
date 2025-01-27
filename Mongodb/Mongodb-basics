@@ -1,0 +1,56 @@
+Mongodb -> is a Nosql database it does not have any  any schema and it provide high scalability and faster document retrival
+
+mongoshell is used to connect the mongodb  instance running on local:27017
+
+command=>
+
+mongosh
+
+output =>
+
+Current Mongosh Log ID:	679707dd5812003a313f6bd6
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.8
+Using MongoDB:		8.0.4
+Using Mongosh:		2.3.8
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-01-27T09:06:44.414+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted.
+
+to show the available database
+
+command =>
+
+show dbs
+
+result=>
+
+admin    40.00 KiB
+appdb   144.00 KiB
+config   48.00 KiB
+local    88.00 KiB
+
+switch to the new database if exits else it will existing databse
+
+command=>
+
+use appdb
+
+result=>
+
+switched to db appdb
+
+
+to show all the available collections in database
+
+command=>
+
+show collections
+
+result=>
+
+student
+users
+
