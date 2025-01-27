@@ -1,0 +1,50 @@
+creation of collection done by inserting atleast document
+
+insertOne=> inserting a single document in a collections
+
+query =>
+
+db.users.insertOne({
+... name: "sachin",
+... age: 50 ,
+... hobbies: ["cricket","investment","add"],
+... address: {street:"North street",city:"mumbai",pincode:609405},
+... balance: 20000,
+... debt: 9800})
+
+
+result =>
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('6797194e603f864bb7c157f4')
+}
+
+
+insertMany => inserting a more than one document in collections
+
+query=>
+
+db.users.insertMany([{
+... name:"surya",
+... age:45,
+... hobbies:["acting","readingbooks"],
+... addres:{street:"south street",city:"chennai",pincode:609403},
+... balance:2300,
+... debt:100},{
+... name:"vijay",
+... age:50,
+... hobbies:["acting","Socialservice"],
+... balance:10000,
+... debt:1200}])
+
+result=>
+
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67972268603f864bb7c157f5'),
+    '1': ObjectId('67972268603f864bb7c157f6')
+  }
+}
