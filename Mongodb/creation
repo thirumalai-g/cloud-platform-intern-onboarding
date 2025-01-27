@@ -48,3 +48,98 @@ result=>
     '1': ObjectId('67972268603f864bb7c157f6')
   }
 }
+
+
+to see all available documents in a collections
+
+command
+
+appdb> db.users.find().pretty()
+
+
+result=>
+
+[
+  {
+    _id: ObjectId('678742df484386806e578488'),
+    name: 'Krishna',
+    age: 30,
+    address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 },
+    hobbies: [ 'coding', 'cricket', 'good' ]
+  },
+  { _id: ObjectId('6787449f484386806e578489'), name: 'Rathessh' },
+  { _id: ObjectId('6787449f484386806e57848a'), name: 'Rithish' },
+  { _id: ObjectId('6787449f484386806e57848b'), name: 'saikrishna' },
+  {
+    _id: ObjectId('678753ec484386806e57848c'),
+    name: 'Kayle',
+    age: '22',
+    address: { street: 'south street', pincode: 600441 },
+    hoobies: [ 'webdev', 'games' ]
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848d'),
+    name: 'Dave',
+    age: 25,
+    hobbies: [ 'appdevelopment', 'cybersecurity' ],
+    address: { street: '780 West Street', pincode: 609405, city: 'Thiruvarur' }
+  },
+  {
+    _id: ObjectId('678756f2484386806e57848e'),
+    name: 'Manikandan',
+    age: 50,
+    hobbies: [ 'watchingnews', 'riding' ],
+    address: { street: 'Sannthi street', city: 'Nanilam' }
+  },
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  },
+  {
+    _id: ObjectId('67876f2f484386806e578490'),
+    name: 'Suresh',
+    age: 35,
+    hobbies: [ 'Gaming' ],
+    address: { street: 'Suresh st', city: 'Coimbatore' },
+    balance: 20,
+    debt: 0
+  },
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  },
+  {
+    _id: ObjectId('6797194e603f864bb7c157f4'),
+    name: 'sachin',
+    age: 50,
+    hobbies: [ 'cricket', 'investment', 'add' ],
+    address: { street: 'North street', city: 'mumbai', pincode: 609405 },
+    balance: 20000,
+    debt: 9800
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 45,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f6'),
+    name: 'vijay',
+    age: 50,
+    hobbies: [ 'acting', 'Socialservice' ],
+    balance: 10000,
+    debt: 1200
+  }
+]
