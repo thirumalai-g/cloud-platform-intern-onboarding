@@ -72,3 +72,48 @@ db.users.find({name:"Krishna"})
     hobbies: [ 'coding', 'cricket', 'good' ]
   }
 ]
+
+query a array in hobbies which contains "acting"
+
+appdb> db.users.find({hobbies:{$all:["acting"]}})
+
+
+[
+  {
+    _id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 46,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100,
+    loan: true
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f6'),
+    name: 'vijay',
+    age: 50,
+    hobbies: [ 'acting', 'Socialservice' ],
+    balance: 10000,
+    debt: 1200,
+    loan: true
+  }
+]
+
+
+
+query a nested documents by "." operator
+
+appdb> db.users.find({"address.city":"mumbai"})
+[
+  {
+    _id: ObjectId('6797194e603f864bb7c157f4'),
+    name: 'sachin',
+    age: 50,
+    hobbies: [ 'cricket', 'investment', 'add' ],
+    address: { street: 'North street', city: 'mumbai', pincode: 609405 },
+    balance: 20000,
+    debt: 9800,
+    loan: true
+  }
+]
