@@ -1,0 +1,77 @@
+for stringoperation  created a new collection
+operation such concat,toupper,tolower,
+db.student.find().pretty()
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fees: 54000,
+    tax: 4000,
+    fname: 'krishna',
+    lname: 'mani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fees: 48000,
+    tax: 2500,
+    lname: 'baskaran',
+    fname: 'thiru'
+  }
+]
+
+query=>
+
+db.student.aggregate([ { $project: { fullname: { $concat: ["$fname", "$lname"] } } }])
+
+
+result=>
+
+[
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809b9'),
+    fullname: 'krishnamani'
+  },
+  {
+    _id: ObjectId('6789db3b9e71a22bc47809ba'),
+    fullname: 'thirubaskaran'
+  }
+]
+
+
+query => convert into uppercase
+
+appdb> db.student.aggregate([
+... {
+... $project:{uppercase:{$toUpper:"$fname"}}}])
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), uppercase: 'KRISHNA' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), uppercase: 'THIRU' }
+]
+
+
+query => convert into  lowercase
+
+appdb> db.student.aggregate([ { $project: { lowercase: { $toLower: "$lname" } } }])
+
+
+result=>
+
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), lowercase: 'mani' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), lowercase: 'baskaran' }
+]
+
+
+query=> to get a substring from the valaues
+
+appdb> db.student.aggregate([{
+... $project:{
+... substring:{$substrCP:["$fname",0,5]}}}])
+
+
+result=>
+[
+  { _id: ObjectId('6789db3b9e71a22bc47809b9'), substring: 'krish' },
+  { _id: ObjectId('6789db3b9e71a22bc47809ba'), substring: 'thiru' }
+]
+
+
