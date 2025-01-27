@@ -1,0 +1,108 @@
+
+Logiacl operator => $or ,$not,  $and,$nor
+
+query=>
+
+db.users.find({
+... $and:[{debt:{$lte:1000}},{loan:true}]})
+
+
+result =>
+
+[
+  {
+    _id: ObjectId('67876f2f484386806e578490'),
+    name: 'Suresh',
+    age: 35,
+    hobbies: [ 'Gaming' ],
+    address: { street: 'Suresh st', city: 'Coimbatore' },
+    balance: 20,
+    debt: 0,
+    loan: true
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 46,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100,
+    loan: true
+  }
+]
+
+
+query=>
+
+
+ db.users.find({$or:[{age:{$gt:45}},{balaance:20000}]})
+
+
+
+result=>
+
+
+[
+  {
+    _id: ObjectId('678756f2484386806e57848e'),
+    name: 'Manikandan',
+    age: 50,
+    hobbies: [ 'watchingnews', 'riding' ],
+    address: { street: 'Sannthi street', city: 'Nanilam' }
+  },
+  {
+    _id: ObjectId('6797194e603f864bb7c157f4'),
+    name: 'sachin',
+    age: 50,
+    hobbies: [ 'cricket', 'investment', 'add' ],
+    address: { street: 'North street', city: 'mumbai', pincode: 609405 },
+    balance: 20000,
+    debt: 9800,
+    loan: true
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 46,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100,
+    loan: true
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f6'),
+    name: 'vijay',
+    age: 50,
+    hobbies: [ 'acting', 'Socialservice' ],
+    balance: 10000,
+    debt: 1200,
+    loan: true
+  }
+]
+
+
+query =>
+
+db.users.find({age:{$not:{$gt:20}}})
+
+result=>
+
+  {
+    _id: ObjectId('678753ec484386806e57848c'),
+    name: 'Kayle',
+    age: '22',
+    address: { street: 'south street', pincode: 600441 },
+    hoobies: [ 'webdev', 'games' ]
+  },
+  {
+    _id: ObjectId('67876f2f484386806e57848f'),
+    name: 'Ramesh',
+    age: 19,
+    hobbies: [ 'Singing' ],
+    address: { street: 'Rameshst', city: 'Texas' },
+    balance: 100,
+    debt: 200
+  }
+]
