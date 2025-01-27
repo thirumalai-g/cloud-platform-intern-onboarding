@@ -1,0 +1,74 @@
+findOne => method is used to find a single document from a collection
+
+db.collection.findOne(query, projection)
+
+projection => is used to include or exclude a field in a returned document
+
+query=>(inclusion projection)
+
+db.users.findOne({name:"Krishna"},{hobbies:1})
+
+result=>
+{
+  _id: ObjectId('678742df484386806e578488'),
+  hobbies: [ 'coding', 'cricket', 'good' ]
+}
+
+query=>(exclusion projection)
+
+db.users.findOne({name:"Krishna"},{hobbies:0})
+
+
+result =>
+
+{
+  _id: ObjectId('678742df484386806e578488'),
+  name: 'Krishna',
+  age: 30,
+  address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 }
+}
+
+
+
+findOneDelete=> method is used to find and delete an document
+
+db.users.findOneAndDelete({name:"kalpak"})
+
+{
+  _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+  name: 'kalpak',
+  age: 29,
+  debt: 2000,
+  balance: 2000
+}
+
+
+findOneAndUpdate => method is used to find a method and update the method
+
+query=>
+
+appdb> db.users.findOneAndUpdate({name:"Krishna"},{$inc:{age:1}})
+
+before=>
+
+{
+  _id: ObjectId('678742df484386806e578488'),
+  name: 'Krishna',
+  age: 30,
+  address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 },
+  hobbies: [ 'coding', 'cricket', 'good' ]
+}
+
+
+after
+
+db.users.find({name:"Krishna"})
+[
+  {
+    _id: ObjectId('678742df484386806e578488'),
+    name: 'Krishna',
+    age: 31,
+    address: { houseno: 273, street: 'Sannathi Street', pincode: 609403 },
+    hobbies: [ 'coding', 'cricket', 'good' ]
+  }
+]
