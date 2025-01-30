@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ed1269-8b60-4ee5-b9b2-a9f504d4abe3" name="Changes" comment="Sampleproject">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList" beforeDir="false" afterPath="$PROJECT_DIR$/Sampleproject-BookList" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,35 +62,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Ruby.AccesModifier.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.DataAbstraction.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.Encapsulation.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.ExceptionHandling.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.Method-override.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.Methods.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.basics.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.collections.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.condition.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.datatypes.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.filehandling.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.oops.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.operatoroverloading.executor&quot;: &quot;Run&quot;,
-    &quot;Ruby.polymorphism.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#1 on Rebasing SERVER-22721-Onboarding-PMI-Intern-Krishna&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Ruby.AccesModifier.executor": "Run",
+    "Ruby.DataAbstraction.executor": "Run",
+    "Ruby.Encapsulation.executor": "Run",
+    "Ruby.ExceptionHandling.executor": "Run",
+    "Ruby.Method-override.executor": "Run",
+    "Ruby.Methods.executor": "Run",
+    "Ruby.basics.executor": "Run",
+    "Ruby.collections.executor": "Run",
+    "Ruby.condition.executor": "Run",
+    "Ruby.datatypes.executor": "Run",
+    "Ruby.filehandling.executor": "Run",
+    "Ruby.oops.executor": "Run",
+    "Ruby.operatoroverloading.executor": "Run",
+    "Ruby.polymorphism.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#1 on SERVER-22721-Onboarding-PMI-Intern-Krishna",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Mongodb" />
@@ -274,6 +275,7 @@
       <workItem from="1737993714181" duration="2452000" />
       <workItem from="1738219819931" duration="188000" />
       <workItem from="1738220037396" duration="185000" />
+      <workItem from="1738220227593" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary="Datatypes">
       <option name="closed" value="true" />
@@ -563,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738220128820</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Sampleproject">
+      <option name="closed" value="true" />
+      <created>1738220509684</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1738220509684</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
