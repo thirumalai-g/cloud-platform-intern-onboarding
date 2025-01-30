@@ -1,0 +1,20 @@
+Index: .idea/krishna-onboarding.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"RUBY_MODULE\" version=\"4\">\n  <component name=\"ModuleRunConfigurationManager\">\n    <shared />\n  </component>\n  <component name=\"NewModuleRootManager\">\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$/features\" isTestSource=\"true\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/spec\" isTestSource=\"true\" />\n      <sourceFolder url=\"file://$MODULE_DIR$/test\" isTestSource=\"true\" />\n    </content>\n    <orderEntry type=\"inheritedJdk\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/krishna-onboarding.iml b/.idea/krishna-onboarding.iml
+--- a/.idea/krishna-onboarding.iml	(revision 4622c279aa9089b06a4a3daf608737280bb375cc)
++++ b/.idea/krishna-onboarding.iml	(date 1738220112350)
+@@ -11,5 +11,8 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.17.3, ruby-2.6.10-p210) [gem]" level="application" />
++    <orderEntry type="library" scope="PROVIDED" name="json (v2.1.0, ruby-2.6.10-p210) [gem]" level="application" />
++    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.11.3, ruby-2.6.10-p210) [gem]" level="application" />
+   </component>
+ </module>
+\ No newline at end of file
