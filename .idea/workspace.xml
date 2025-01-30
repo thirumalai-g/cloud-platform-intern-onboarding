@@ -5,27 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ed1269-8b60-4ee5-b9b2-a9f504d4abe3" name="Changes" comment="Sampleproject">
-      <change afterPath="$PROJECT_DIR$/sampleProject/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/Rakefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/booklist.gemspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampleProject/server.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList" beforeDir="false" afterPath="$PROJECT_DIR$/Sampleproject-BookList" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/CODE_OF_CONDUCT.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/Gemfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/Rakefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/booklist.gemspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/server.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +79,7 @@
     &quot;Ruby.polymorphism.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;SERVER-22721-Onboarding-PMI-Intern-Krishna&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#1 on SERVER-22721-Onboarding-PMI-Intern-Krishna&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -322,6 +302,8 @@
       <workItem from="1738220227593" duration="1341000" />
       <workItem from="1738224709275" duration="141000" />
       <workItem from="1738224855729" duration="3000" />
+      <workItem from="1738225123715" duration="160000" />
+      <workItem from="1738233013412" duration="411000" />
     </task>
     <task id="LOCAL-00001" summary="Datatypes">
       <option name="closed" value="true" />
@@ -627,7 +609,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738224722968</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Sampleproject">
+      <option name="closed" value="true" />
+      <created>1738225135208</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1738225135208</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
