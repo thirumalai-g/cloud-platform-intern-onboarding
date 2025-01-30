@@ -5,8 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92ed1269-8b60-4ee5-b9b2-a9f504d4abe3" name="Changes" comment="Sampleproject">
+      <change afterPath="$PROJECT_DIR$/sampleProject/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/Gemfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/Rakefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/booklist.gemspec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampleProject/server.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sampleproject-BookList" beforeDir="false" afterPath="$PROJECT_DIR$/Sampleproject-BookList" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/CODE_OF_CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/Gemfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/Rakefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/booklist.gemspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sampleproject-BookList/server.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,37 +81,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Ruby.AccesModifier.executor": "Run",
-    "Ruby.DataAbstraction.executor": "Run",
-    "Ruby.Encapsulation.executor": "Run",
-    "Ruby.ExceptionHandling.executor": "Run",
-    "Ruby.Method-override.executor": "Run",
-    "Ruby.Methods.executor": "Run",
-    "Ruby.basics.executor": "Run",
-    "Ruby.collections.executor": "Run",
-    "Ruby.condition.executor": "Run",
-    "Ruby.datatypes.executor": "Run",
-    "Ruby.filehandling.executor": "Run",
-    "Ruby.oops.executor": "Run",
-    "Ruby.operatoroverloading.executor": "Run",
-    "Ruby.polymorphism.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#1 on SERVER-22721-Onboarding-PMI-Intern-Krishna",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Ruby.AccesModifier.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.DataAbstraction.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.Encapsulation.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.ExceptionHandling.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.Method-override.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.Methods.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.basics.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.collections.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.condition.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.datatypes.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.filehandling.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.oops.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.operatoroverloading.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.polymorphism.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SERVER-22721-Onboarding-PMI-Intern-Krishna&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sampleProject" />
       <recent name="$PROJECT_DIR$/Mongodb" />
       <recent name="$PROJECT_DIR$/MOongodb" />
       <recent name="$PROJECT_DIR$/Ruby" />
@@ -114,7 +134,11 @@
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
       <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
@@ -143,7 +167,11 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
@@ -170,7 +198,11 @@
       <RACK_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RACK_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RACK_CONFIG_SETTINGS_ID NAME="PORT" VALUE="9292" />
       <RACK_CONFIG_SETTINGS_ID NAME="IP" VALUE="0.0.0.0" />
@@ -187,7 +219,11 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
@@ -205,7 +241,11 @@
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
@@ -219,7 +259,11 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
       <EXTENSION ID="BundlerRunConfigurationExtension" BUNDLE_MODE="AUTO" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
@@ -276,6 +320,8 @@
       <workItem from="1738219819931" duration="188000" />
       <workItem from="1738220037396" duration="185000" />
       <workItem from="1738220227593" duration="1341000" />
+      <workItem from="1738224709275" duration="141000" />
+      <workItem from="1738224855729" duration="3000" />
     </task>
     <task id="LOCAL-00001" summary="Datatypes">
       <option name="closed" value="true" />
@@ -573,7 +619,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738220509684</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Sampleproject">
+      <option name="closed" value="true" />
+      <created>1738224722968</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1738224722968</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
