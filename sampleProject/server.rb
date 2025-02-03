@@ -4,7 +4,6 @@ require 'sinatra'
 
 require 'mongoid'
 
-require 'sinatra'
 
 # get '/users' do
 #   'Welcome to Booklist!'
