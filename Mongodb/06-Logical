@@ -91,13 +91,6 @@ db.users.find({age:{$not:{$gt:20}}})
 result=>
 
   {
-    _id: ObjectId('678753ec484386806e57848c'),
-    name: 'Kayle',
-    age: '22',
-    address: { street: 'south street', pincode: 600441 },
-    hoobies: [ 'webdev', 'games' ]
-  },
-  {
     _id: ObjectId('67876f2f484386806e57848f'),
     name: 'Ramesh',
     age: 19,
