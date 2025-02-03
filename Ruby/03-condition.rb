@@ -1,5 +1,5 @@
-# # frozen_string_literal: true
-#
+#   https://www.geeksforgeeks.org/ruby-programming-language/#basics
+
 mark=91
 
 if mark < 50

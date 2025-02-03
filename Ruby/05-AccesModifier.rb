@@ -1,6 +1,6 @@
-# frozen_string_literal: true
 
 # Public Acess modifier
+# https://www.geeksforgeeks.org/ruby-access-control/
 
 class Geeks
   def publicmethod

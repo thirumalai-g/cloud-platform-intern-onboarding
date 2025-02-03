@@ -1,3 +1,5 @@
+https://www.geeksforgeeks.org/how-to-create-database-collection-in-mongodb/
+
 creation of collection done by inserting atleast document
 
 insertOne=> inserting a single document in a collections

@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# https://www.geeksforgeeks.org/file-handling-in-ruby/
 # create file
 
 fileobject = File.new("sample.txt", "w+")

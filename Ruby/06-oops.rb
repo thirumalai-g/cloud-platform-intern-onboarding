@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# https://www.geeksforgeeks.org/object-oriented-programming-in-ruby-set-1/
 
 class Language
   #public variable

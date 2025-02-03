@@ -1,3 +1,5 @@
+https://www.geeksforgeeks.org/indexing-data-in-elasticsearch/
+
 created index using rest api PUT method then created
 curl ->client url used to connect with server
 -X -> used http protocol

@@ -1,3 +1,5 @@
+https://www.geeksforgeeks.org/filtering-documents-in-elasticsearch/
+
 filter => it filter the document with the condition and it does not have any revalance scoring but normal query do
 
 query =>

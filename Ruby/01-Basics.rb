@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# https://www.geeksforgeeks.org/ruby-programming-language/#basics
 
 BEGIN{
   a=(2...8).to_a

@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# https://www.geeksforgeeks.org/ruby-data-types/
 
 # num and float with fixed size
 distance = 20

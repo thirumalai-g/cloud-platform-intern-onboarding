@@ -1,5 +1,4 @@
-# frozen_string_literal: true
-
+# https://www.geeksforgeeks.org/method-overloading-in-ruby/
 class Car
   attr_accessor :name,:color
   def initialize(name,color)

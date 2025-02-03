@@ -1,3 +1,5 @@
+https://www.geeksforgeeks.org/mongodb-query-embedded-documents-using-mongo-shell/
+
 findOne => method is used to find a single document from a collection
 
 db.collection.findOne(query, projection)

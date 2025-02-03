@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# https://www.geeksforgeeks.org/data-abstraction-in-ruby/
 
 class Geeks
   def publicmethod
