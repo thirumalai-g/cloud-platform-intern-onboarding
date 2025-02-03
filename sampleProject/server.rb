@@ -120,30 +120,12 @@ end
 
 
 
-# get '/books' do
-#   books=Book.all
-#
-#   [:title,:isbn,:author].each do |filter|
-#     books=Book.send(filter,params[filter]) if params[filter]
-#   end
-#   books.to_json
-# end
 
 
 
 
 
 
-
-# get '/' do
-#   before do
-#     content_type :'application/json'
-#   end
-#
-#   get '/books' do
-#     Book.all.to_json
-#   end
-# end
 
 
 
