@@ -45,4 +45,3 @@ Learning for Intern Onboarding
 -  The Update Endpoint: PATCH
 -  The delete Endpoint: DELETE
 
-
