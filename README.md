@@ -1,5 +1,5 @@
 # cloud-platform-intern-onboarding
-Learning for Intern Onboarding - Krishna
+Learning for Intern Onboarding
 
 ## 1. Ruby
 **Concepts Covered:- https://www.geeksforgeeks.org/ruby-programming-language/**
