@@ -1,0 +1,104 @@
+https://www.geeksforgeeks.org/mongodb-update-method/
+
+updateOne - this method is used to modify the single document
+
+query=>
+
+db.users.updateOne({name:"surya"},{$inc:{age:1}})
+
+result=>
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+conflicts
+
+before in age:
+
+_id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 45,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100
+
+after in age:
+
+ db.users.find({name:"surya"})
+[
+  {
+    _id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 46,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100
+  }
+]
+
+updateMany => by this  update many documents in single query
+
+
+query=>
+
+db.users.updateMany({$expr:{$gt:["$balance","$debt"]}},
+... {$set:{loan:true}})
+
+result=>
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+
+conflicts=>
+
+updates happen in satisfied conditon=>
+
+[
+  {
+    _id: ObjectId('6788d0a628b0dd5e8ee9082a'),
+    name: 'kalpak',
+    age: 29,
+    debt: 2000,
+    balance: 2000
+  },
+  {
+    _id: ObjectId('6797194e603f864bb7c157f4'),
+    name: 'sachin',
+    age: 50,
+    hobbies: [ 'cricket', 'investment', 'add' ],
+    address: { street: 'North street', city: 'mumbai', pincode: 609405 },
+    balance: 20000,
+    debt: 9800,
+    loan: true
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f5'),
+    name: 'surya',
+    age: 46,
+    hobbies: [ 'acting', 'readingbooks' ],
+    addres: { street: 'south street', city: 'chennai', pincode: 609403 },
+    balance: 2300,
+    debt: 100,
+    loan: true
+  },
+  {
+    _id: ObjectId('67972268603f864bb7c157f6'),
+    name: 'vijay',
+    age: 50,
+    hobbies: [ 'acting', 'Socialservice' ],
+    balance: 10000,
+    debt: 1200,
+    loan: true
+  }
+]

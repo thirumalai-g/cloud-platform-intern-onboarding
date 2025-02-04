@@ -1,0 +1,57 @@
+https://www.geeksforgeeks.org/searching-documents-in-elasticsearch/
+
+
+aggreation => is used to find a compute statistical metrics like average, sum
+
+query =>(aerage is performed)
+
+
+$ curl -X GET "localhost:9200/my_index/_search" -H 'Content-Type:application/json' -d '{
+> "size":0,
+> "aggs":{
+> "avg_price":{
+> "avg":{
+> "field":"price"}}}}'
+
+
+result =>
+
+
+{"took":32,"timed_out":false,"_shards":{"total":5,"successful":5,"skipped":0,"failed":0},"hits":
+{"total":2,"max_score":0.0,"hits":[]},"aggregations":{"avg_price":{"value":27.9399995803833}}}
+
+
+query => (sum is performed)
+
+curl -X GET "localhost:9200/my_index/_search?pretty" -H 'Content-Type:application/json' -d'{
+> "size":0,
+> "aggs":{
+> "total_price":{
+> "sum":{
+> "field":"price"}}}}'
+
+
+result =>
+
+{
+  "took" : 2,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 2,
+    "max_score" : 0.0,
+    "hits" : [ ]
+  },
+  "aggregations" : {
+    "total_price" : {
+      "value" : 55.8799991607666
+    }
+  }
+}
+
+

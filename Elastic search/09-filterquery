@@ -1,0 +1,55 @@
+https://www.geeksforgeeks.org/filtering-documents-in-elasticsearch/
+
+filter => it filter the document with the condition and it does not have any revalance scoring but normal query do
+
+query =>
+
+
+curl -X POST "http://localhost:9200/my_index/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "price":29.99
+          }
+        }
+      ]
+    }
+  }
+}
+'
+
+
+
+result =>
+
+{
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1,
+    "max_score" : 0.0,
+    "hits" : [
+      {
+        "_index" : "my_index",
+        "_type" : "_doc",
+        "_id" : "1",
+        "_score" : 0,
+        "_source" : {
+          "title" : "Elasticsearch for Beginners",
+          "author" : "John Doe",
+          "publication_date" : "2023-01-01",
+          "price" : 29.99
+        }
+      }
+    ]
+  }
+}
