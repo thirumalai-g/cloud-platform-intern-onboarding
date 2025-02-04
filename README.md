@@ -2,8 +2,7 @@
 Learning for Intern Onboarding - Krishna
 
 ## 1. Ruby
-**Concepts Covered:**
-- https://www.geeksforgeeks.org/ruby-programming-language/
+**Concepts Covered:- https://www.geeksforgeeks.org/ruby-programming-language/**
 - Overview
 - Basics
 - Control Statements
@@ -16,8 +15,8 @@ Learning for Intern Onboarding - Krishna
 - Module (Good to Know)
 
 ## 2. MongoDB
-**Concepts Covered:**
-- https://www.geeksforgeeks.org/mongodb-index-types/?ref=lbp
+**Concepts Covered:- https://www.geeksforgeeks.org/mongodb-index-types/?ref=lbp**
+
 - Introduction
 - Installation - Only on MacOs (do it via homebrew)
 - Basics of MongoDB
@@ -29,8 +28,7 @@ Learning for Intern Onboarding - Krishna
 - Advanced - (Aggregations Alone)
 
 ## 3. ElasticSearch
-**Concepts Covered:**
--  https://www.geeksforgeeks.org/elasticsearch-tutorial/?ref=ml_lbp
+**Concepts Covered:- https://www.geeksforgeeks.org/elasticsearch-tutorial/?ref=ml_lbp**
 -  Read Pre-requisites
 -  Read and Understand Introduction and Basics
 -  Setup and Installation - Only ElasticSearch Installation, skip others
@@ -38,8 +36,7 @@ Learning for Intern Onboarding - Krishna
 -  Data Indexing & Querying
 
 ## 4. Sample Application
-**Concepts Covered**
--  https://x-team.com/magazine/how-to-create-a-ruby-api-with-sinatra
+**Concepts Covered:-  https://x-team.com/magazine/how-to-create-a-ruby-api-with-sinatra**
 -  created ruby api using sinatra sample project
 -  Adding Mongoid to the project
 -  Creating a Book JSON serializer
